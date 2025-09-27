@@ -1,0 +1,28 @@
+<div class="layout">
+  <div class="columns">
+    <div class="column">
+      <span class="title text--center mb--4">{{ repo.full_name }}</span>
+      <div class="grid grid--cols-1">
+        <div class="row">
+          {% render 'stat' with label: 'Stars', value: stargazers, size: 'value--large', number: true %}
+          {% render 'stat' with label: 'Forks',value: forks, size: 'value--large', number: true %}
+        </div>
+
+        <div class="row">
+          {% render 'stat' with label: 'Latest Version', value: latest_release_tag_name, size: 'value--large', number: false %}
+          {% render 'stat' with label: 'Published at', value: latest_release_published_at, size: 'value--large', number: false %}
+        </div>
+
+        <div class="row">
+          {% render 'stat' with label: 'Issues', value: issues_count, size: 'value--large', number: true %}
+          {% render 'stat' with label: 'Open PRs', value: pr_count, size: 'value--large', number: true %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="title_bar">
+  <img class="image" src="data:image/svg+xml;base64,{{ plugin_icon | base64_encode }}">
+  <span class="instance">{{ repo_name }}</span>
+</div>

@@ -1,0 +1,38 @@
+<div class="layout">
+  <div class="columns">
+    <div class="column">
+      <div class="grid grid--cols-1">
+        <div class="row">
+          {% render 'stat' with value: stargazers, size: 'value--small', number: true, label: 'Stars' %}
+          {% render 'stat' with value: forks, size: 'value--small', number: true, label: 'Forks' %}
+        </div>
+
+        <div class="row">
+          {% render 'stat' with value: latest_release_tag_name, size: 'value--small', number: false, label: 'Latest Version' %}
+          {% render 'stat' with value: latest_release_published_at, size: 'value--small', number: false, label: 'Published at' %}
+        </div>
+        
+        <div class="row">
+          {% render 'stat' with value: issues_count, size: 'value--small', number: true, label: 'Issues' %}
+          {% render 'stat' with value: pr_count, size: 'value--small', number: true, label: 'Open PRs' %}
+        </div>
+      </div>
+    </div>
+    <div class="divider--v"></div>
+    <div class="column">
+      {% if custom_view == 'changelog' %}
+        {% render 'changelog_column' with changelog_html: changelog_html, max_height: '160' %}
+      {% endif %}
+
+      {% if custom_view == 'latest_issue' %}
+        {% render 'latest_issue_column' with latest_issue: latest_issue, max_height: '160' %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="title_bar">
+  <img class="image" src="data:image/svg+xml;base64,{{ plugin_icon | base64_encode }}">
+  <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
+  <span class="instance">{{ repo_name }}</span>
+</div>

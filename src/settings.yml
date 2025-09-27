@@ -1,0 +1,32 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+polling_url: "https://api.github.com/repos/{{github_repo}}\r\nhttps://api.github.com/repos/{{github_repo}}/releases/latest\r\nhttps://api.github.com/search/issues?q=repo:{{github_repo}}+type:issue+state:open\r\nhttps://api.github.com/search/issues?q=repo:{{github_repo}}+type:pr+state:open\r\n"
+polling_headers: accept=application/vnd.github.v3.html+json
+polling_body: ''
+id: 158645
+custom_fields:
+- keyname: author_bio
+  name: About This Plugin
+  field_type: author_bio
+  description: Display insights of a GitHub Repository
+  github_url: https://github.com/bnussbau/trmnl-github-repo-insights
+  learn_more_url: https://github.com/bnussbau/trmnl-github-repo-insights/tree/main/README.md
+- keyname: github_repo
+  field_type: string
+  name: GitHub Repository
+  placeholder: usetrmnl/byos_laravel
+  help_text: Enter the GitHub repository in the format 'owner/repo' (e.g., 'usetrmnl/byos_laravel')
+- keyname: custom_view
+  field_type: select
+  name: Secondary View
+  default: changelog
+  options:
+  - Changelog: changelog
+  - Latest Issue: latest_issue
+  help_text: Select the view to display in the secondary column
+name: Github Repo Insights
+refresh_interval: 1440
