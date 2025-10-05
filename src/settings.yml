@@ -13,8 +13,8 @@ custom_fields:
   name: About This Plugin
   field_type: author_bio
   description: Display insights of a GitHub Repository
-  github_url: https://github.com/bnussbau/trmnl-github-repo-insights
-  learn_more_url: https://github.com/bnussbau/trmnl-github-repo-insights/tree/main/README.md
+  github_url: https://github.com/bnussbau/trmnl-github-insights
+  learn_more_url: https://github.com/bnussbau/trmnl-github-insights/tree/main/README.md
 - keyname: github_repo
   field_type: string
   name: GitHub Repository
