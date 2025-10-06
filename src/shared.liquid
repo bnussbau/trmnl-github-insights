@@ -46,11 +46,11 @@
 {% endtemplate %}
 
 {% template changelog_column %}
-  <div class="richtext gap--large">
+  <div class="richtext gap--large" >
     {% if max_height == '320' %}
       <span class="title mb--4">Changelog</span>
     {% endif %}
-    <div class="content-element content clamp--20" data-content-max-height="{{ max_height }}">
+    <div class="content-element content" data-content-limiter="true" data-clamp="30">
       {{ changelog_html }}
     </div>
   </div>
@@ -62,7 +62,7 @@
       <span class="title mb--4">Latest Issue</span>
     {% endif %}
     <span class="title title--small">{{ latest_issue.title }}</span>
-    <div class="content-element content clamp--20" data-content-max-height="{{ max_height }}">
+    <div class="content-element content" data-content-limiter="true" data-clamp="30">
       {{ latest_issue.body_html }}
     </div>
   </div>

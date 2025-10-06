@@ -9,7 +9,7 @@ watch:
 # values of custom fields (defined in src/settings.yml)
 custom_fields:
   github_repo: usetrmnl/byos_laravel
-  custom_view: changelog
+  custom_view: latest_issue
 
 # override variables
 variables:
