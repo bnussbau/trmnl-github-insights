@@ -13,6 +13,7 @@ custom_fields:
   name: About This Plugin
   field_type: author_bio
   description: Display insights of a GitHub Repository
+  category: programming,kpi
   github_url: https://github.com/bnussbau/trmnl-github-insights
   learn_more_url: https://github.com/bnussbau/trmnl-github-insights/tree/main/README.md
 - keyname: github_repo
